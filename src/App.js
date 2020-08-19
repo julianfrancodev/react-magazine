@@ -1,26 +1,44 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+import firebase, { FirebaseContext } from './firebase/';
+import useAuth from './hooks/useAuth';
+
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from "react-router-dom";
+
+import Home from './pages/Home';
+import Popular from './pages/Popular';
+import Profile from './pages/Profile';
+import Settings from './pages/Settings';
+
+export default function App() {
+
+    const user = useAuth();
+
+    return (
+        <FirebaseContext.Provider
+            value={{ firebase, user }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+            <Router>
+                <Switch>
+                    <Route path="/">
+                        <Home />
+                    </Route>
+                    <Route path="/Popular">
+                        <Popular />
+                    </Route>
+                    <Route path="/Profile">
+                        <Profile />
+                    </Route>
+                    <Route path="/Settings">
+                        <Settings />
+                    </Route>
+                </Switch>
+            </Router>
+        </FirebaseContext.Provider>
+    )
 }
-
-export default App;
