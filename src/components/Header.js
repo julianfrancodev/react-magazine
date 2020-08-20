@@ -2,9 +2,13 @@ import React, { useState, useContext } from 'react';
 import { Button, Dropdown } from 'react-bootstrap';
 import SigninModal from './SigninModal';
 import { FirebaseContext } from '../firebase';
+import { Link, Redirect, NavLink } from 'react-router-dom';
+import { useHistory } from "react-router-dom";
 
 
 export default function Header() {
+
+    const history = useHistory();
 
     const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
         <a
@@ -38,12 +42,12 @@ export default function Header() {
                                     </Dropdown.Toggle>
 
                                     <Dropdown.Menu >
-                                        <Dropdown.Item><h5 className='dropMenu'>{user.displayName}</h5></Dropdown.Item>
-                                        <Dropdown.Item><i className="fa fa-edit"></i> Crear Blog</Dropdown.Item>
+                                        <Dropdown.Item onClick={()=> history.push('/Profile')}><h5 className='dropMenu'>{user.displayName}</h5></Dropdown.Item>
+                                        <Dropdown.Item onClick={()=> history.push('/CreatePost')}><i className="fa fa-edit"></i> Crear Blog</Dropdown.Item>
                                         <Dropdown.Divider />
-                                        <Dropdown.Item><i className="fa fa-cogs"></i> Ajustes</Dropdown.Item>
+                                        <Dropdown.Item onClick={()=> history.push('/Settings')}><i className="fa fa-cogs"></i> Ajustes</Dropdown.Item>
                                         <Dropdown.Divider />
-                                        <Dropdown.Item><i className="fa fa-sign-out"></i> Cerrar Sesion</Dropdown.Item>
+                                        <Dropdown.Item onClick={()=> firebase.logout()}><i className="fa fa-sign-out"></i> Cerrar Sesion</Dropdown.Item>
                                     </Dropdown.Menu>
                                 </Dropdown>
 
@@ -62,7 +66,9 @@ export default function Header() {
                     </div>
 
                     <div className="col-4 text-center">
-                            <a className="blog-header-logo text-dark">Veritas</a>
+                        <Link to='/' style={{ textDecoration: 'none' }}>
+                            <span className="blog-header-logo text-dark">Veritas</span>
+                        </Link>
 
                     </div>
 

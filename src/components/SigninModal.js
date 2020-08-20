@@ -6,6 +6,8 @@ import useLoginValidation from '../hooks/useLoginValidation';
 import validationSignUp from '../validation/validationSignUp';
 import validationSignin from '../validation/validationSignin';
 import { ToastContainer, toast } from 'react-toastify';
+import { useHistory } from "react-router-dom";
+
 
 import firebase from '../firebase';
 
@@ -21,6 +23,8 @@ const SIGNIN_INITIAL_STATE = {
 };
 
 export default function SigninModal(props) {
+    const history = useHistory();
+
 
     const [error, setError] = useState(false);
 
@@ -33,7 +37,8 @@ export default function SigninModal(props) {
     async function createAccount() {
         try {
             await firebase.signup(name, email, password);
-            
+            history.push('/Popular');
+
         } catch (error) {
             toast.error(`El email ya se encuentra registrado`, {
                 position: "top-center",
@@ -50,6 +55,7 @@ export default function SigninModal(props) {
     async function loginAccount() {
         try {
             const user = await firebase.login(emailL, passwordL);
+            history.push('/Popular');
         } catch (error) {
             toast.error(`Email y/o Contraseña Incorrecta.`, {
                 position: "top-center",

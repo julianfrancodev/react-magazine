@@ -7,13 +7,13 @@ import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link
 } from "react-router-dom";
 
 import Home from './pages/Home';
 import Popular from './pages/Popular';
 import Profile from './pages/Profile';
 import Settings from './pages/Settings';
+import CreatePost from './pages/CreatePost';
 
 export default function App() {
 
@@ -25,17 +25,20 @@ export default function App() {
         >
             <Router>
                 <Switch>
-                    <Route path="/">
+                    <Route exact path="/">
                         <Home />
                     </Route>
-                    <Route path="/Popular">
+                    <Route exact path="/Popular">
                         <Popular />
                     </Route>
-                    <Route path="/Profile">
+                    <Route exact path="/Profile">
                         <Profile />
                     </Route>
-                    <Route path="/Settings">
+                    <Route exact path="/Settings">
                         <Settings />
+                    </Route>
+                    <Route exact path="/CreatePost">
+                        <CreatePost />  
                     </Route>
                 </Switch>
             </Router>

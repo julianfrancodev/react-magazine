@@ -7,7 +7,7 @@ export default function Layout(props) {
         <Container>
             <Header/>
             <main>
-                {props.childre}
+                {props.children}
             </main>
         </Container>
     )

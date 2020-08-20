@@ -16,8 +16,8 @@ export default function BlogMain() {
                             <BlogPost/>
 
                             <nav className="blog-pagination">
-                                <a className="btn btn-outline-primary" href="#">Older</a>
-                                <a className="btn btn-outline-secondary ml-3" href="#">Newer</a>
+                                <span className="btn btn-outline-primary" href="#">Older</span>
+                                <span className="btn btn-outline-secondary ml-3" href="#">Newer</span>
                             </nav>
 
                     </div>
