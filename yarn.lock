@@ -4456,6 +4456,13 @@ draft-js-buttons@^2.0.1:
   dependencies:
     clsx "^1.0.4"
 
+draft-js-hashtag-plugin@^2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/draft-js-hashtag-plugin/-/draft-js-hashtag-plugin-2.0.4.tgz#a173403e4de3354539d0ba16ee6e9affa855154d"
+  integrity sha512-kqsPzRGclvKxut7YfAECJLY/9XGaLqppHHYR/UF1jhYdmfW3BF2LjXgOCDD7HphBl3cHsoQ0+N9SwD5T8iLf8g==
+  dependencies:
+    clsx "^1.0.4"
+
 draft-js-image-plugin@^2.0.7:
   version "2.0.7"
   resolved "https://registry.yarnpkg.com/draft-js-image-plugin/-/draft-js-image-plugin-2.0.7.tgz#1077304e00a22a561a5d4de1ba7b2749e545ff1f"
