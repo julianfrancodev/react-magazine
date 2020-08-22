@@ -30,6 +30,8 @@ export default function CreatePost() {
     () => EditorState.createEmpty(),
   );
 
+  console.log(editorState);
+
   return (
     <Layout>
         <DraftailEditor
