@@ -73,6 +73,7 @@ export default function SigninModal(props) {
 
     return (
         <Modal
+            animation={false}
             {...props}
             size="md"
             aria-labelledby="contained-modal-title-vcenter"

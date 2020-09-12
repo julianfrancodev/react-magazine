@@ -52,7 +52,7 @@ hr.hr-text::before {
     display: inline-block;
     background: #fff;
     font-weight: bold;
-    font-family: "Cookie",sans-serif;
+    font-family: sans-serif;
     font-size: 1rem;
     color: #999;
     border-radius: 30rem;
