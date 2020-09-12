@@ -43,11 +43,11 @@ export default function Header() {
 
                                     <Dropdown.Menu >
                                         <Dropdown.Item onClick={()=> history.push('/Profile')}><h5 className='dropMenu'>{user.displayName}</h5></Dropdown.Item>
-                                        <Dropdown.Item onClick={()=> history.push('/CreatePost')}><i className="fa fa-edit"></i> Crear Blog</Dropdown.Item>
+                                        <Dropdown.Item onClick={()=> history.push('/CreatePost')}>Crear Blog</Dropdown.Item>
                                         <Dropdown.Divider />
-                                        <Dropdown.Item onClick={()=> history.push('/Settings')}><i className="fa fa-cogs"></i> Ajustes</Dropdown.Item>
+                                        <Dropdown.Item onClick={()=> history.push('/Settings')}>Ajustes</Dropdown.Item>
                                         <Dropdown.Divider />
-                                        <Dropdown.Item onClick={()=> firebase.logout()}><i className="fa fa-sign-out"></i> Cerrar Sesion</Dropdown.Item>
+                                        <Dropdown.Item onClick={()=> firebase.logout()}>Cerrar Sesion</Dropdown.Item>
                                     </Dropdown.Menu>
                                 </Dropdown>
 
@@ -67,7 +67,7 @@ export default function Header() {
 
                     <div className="col-4 text-center">
                         <Link to='/' style={{ textDecoration: 'none' }}>
-                            <span className="blog-header-logo text-dark">Veritas</span>
+                            <span className="blog-header-logo text-dark">Ribid</span>
                         </Link>
 
                     </div>
